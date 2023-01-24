@@ -1,0 +1,28 @@
+.signup {
+    font-family: 'Poppins', sans-serif;
+}
+.signup-form {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    padding: 5px;
+
+}
+
+.heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    
+}
+
+.row div {
+    width: 25%;
+    align-items: baseline;
+}
+.row div.lab {
+    width: 15%;
+}
