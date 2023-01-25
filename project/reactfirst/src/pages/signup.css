@@ -26,3 +26,17 @@
 .row div.lab {
     width: 15%;
 }
+
+.user-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.first-name {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex-wrap: nowrap;
+}
