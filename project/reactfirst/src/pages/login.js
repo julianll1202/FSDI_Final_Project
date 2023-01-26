@@ -1,9 +1,12 @@
 import './login.css';
 import {useEffect, useState} from 'react';
+import Dataservice from '../services/dataService';
+import { useNavigate } from 'react-router-dom';
+import Home from './home';
 
 const Login = () => {
     const [userCred, setUserCred] = useState({});
-
+    const navigate = useNavigate();
     const handleUserCredChange = (e) => {
         e.preventDefault();
         const text = e.target.value;
@@ -15,9 +18,27 @@ const Login = () => {
         
     }
 
-    const saveUserCred = (e) => {
+    const handleSubmit = (e) => {
+        
         e.preventDefault();
-        console.log(userCred);
+        if (saveUserCred()){
+            navigate('/home');
+        } else {
+            navigate('/login');
+        }
+    }
+    const saveUserCred = async() => {
+        let service = new Dataservice;
+        let copy = {...userCred};
+        console.log(copy['email']);
+        let p = await service.validateUserCred(copy);
+        console.log(p['email']);
+        if (p['email'] == copy['email']){
+            console.log('We are going home');
+            return true;
+        } else {
+            return false;
+        }
     }
 
     return (
@@ -25,7 +46,7 @@ const Login = () => {
             <div className='login-card'>
                 <h1>Log In</h1>
                 <h3>Enter your credentials</h3>
-                <form className="mb-3 login-form" onSubmit={saveUserCred}>
+                <form className="mb-3 login-form" onSubmit={handleSubmit}>
                     <input name="email" type="text" className="form-control" placeholder="Email address" onChange={handleUserCredChange} />
                     <input type="password" name="password" className="form-control" placeholder="Password" onChange={handleUserCredChange}/>                                  
                     <button className='btn btn-success' type='submit'>LOG IN</button>                                  
