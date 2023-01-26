@@ -1,5 +1,7 @@
 import "./signup.css";
 import {useEffect, useState} from 'react';
+import Dataservice from "../services/dataService";
+
 const Signup = ()=>{
     const [user, setUser] = useState({});
 
@@ -13,15 +15,22 @@ const Signup = ()=>{
         setUser(copy);      
     }
 
-    const saveUser = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(user)
+        saveUser();
+    }
+    const saveUser = async() => {
+        let service = new Dataservice();
+        let copy = {...user};
+        console.log(copy);
+        let p = await service.saveUser(copy);
+        console.log(p);
     }
     return (
         <div className="login">
             <div className="login-card">
                 <h1 className="heading">Sign Up</h1>
-                <form className="mb-3 login-form" onSubmit={saveUser}>
+                <form className="mb-3 login-form" onSubmit={handleSubmit}>
                     <div className="user-name">
                         <div className="first-name">
                             <label className="form-label">Name</label>
