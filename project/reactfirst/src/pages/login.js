@@ -21,10 +21,10 @@ const Login = () => {
     const handleSubmit = (e) => {
         
         e.preventDefault();
-        if (saveUserCred()){
-            navigate('/home');
+        if (saveUserCred()) {
+            navigate("/home", {replace: true});
         } else {
-            navigate('/login');
+            navigate("/signup");
         }
     }
     const saveUserCred = async() => {
@@ -32,12 +32,9 @@ const Login = () => {
         let copy = {...userCred};
         console.log(copy['email']);
         let p = await service.validateUserCred(copy);
-        console.log(p['email']);
-        if (p['email'] == copy['email']){
-            console.log('We are going home');
-            return true;
-        } else {
-            return false;
+        console.log(p);
+        if(p['token'] != "") {
+          console.log("i got a token");
         }
     }
 
