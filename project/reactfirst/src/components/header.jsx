@@ -7,6 +7,7 @@ function Header(){
             <h1>FastFoodie</h1>
             <Link aria-current="page" to="/signup">Sign Up</Link>
             <Link aria-current="page" to="/login">Log In</Link>
+            <Link aria-current="page" to="/user-profile">Profile</Link>
         </div>
     );
 }

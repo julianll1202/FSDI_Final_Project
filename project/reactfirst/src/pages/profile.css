@@ -1,0 +1,21 @@
+.profile {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.profile-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-menu > button {
+    background-color: #FFFFFF;
+    border: none;
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+.profile-menu > button:hover {
+    background-color: rgb(235, 235, 235);
+}

@@ -69,3 +69,7 @@
     text-align: left;
     margin-bottom: 5px;
 }
+
+.redirect-link {
+    font-size: 0.75rem;
+}

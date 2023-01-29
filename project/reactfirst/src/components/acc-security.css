@@ -1,0 +1,19 @@
+.acc-security {
+    width: 80%;
+    
+}
+
+.inline-btn {
+    border: 2px solid #ff4800;
+    color: #ff4800;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    
+}
+
+.inline-btn:hover {
+    background-color: #ff4800;
+    color: whitesmoke;   
+}
