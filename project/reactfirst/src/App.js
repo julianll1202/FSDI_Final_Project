@@ -9,10 +9,13 @@ import Signup from './pages/signup';
 import Login from './pages/login';
 import Home from './pages/home';
 import Profile from './pages/profile';
+import Favorites from './pages/favorites';
+import Restaurant from './pages/restaurant';
 import GlobalContext from './state/globalContext';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
+import SideMenu from './components/side-menu';
 
 
 function App() {
@@ -21,14 +24,19 @@ function App() {
   
   return (
     <GlobalContext>
-    <div>
-      <Header />
-      <Routes>
-        <Route path="/signup" element={<Signup />}/>
-        <Route path="/login" element={<Login />}/>
-        <Route path="/home" element={<Home />}/>
-        <Route path="/user-profile" element={<Profile />} />
-      </Routes>
+    <div className='menus'>
+      <SideMenu />
+      <div className='top-menu'>
+        <Header />
+        <Routes>
+          <Route path="/signup" element={<Signup />}/>
+          <Route path="/login" element={<Login />}/>
+          <Route path="/home" element={<Home />}/>
+          <Route path="/user-profile" element={<Profile />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/restaurant" element={<Restaurant />} />
+        </Routes>
+      </div>
     </div>
     </GlobalContext>
     

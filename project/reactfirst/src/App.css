@@ -40,3 +40,13 @@
     transform: rotate(360deg);
   }
 }
+
+.menus {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.top-menu {
+  width: 100%;
+}
