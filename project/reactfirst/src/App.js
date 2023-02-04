@@ -16,6 +16,7 @@ import GlobalContext from './state/globalContext';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import SideMenu from './components/side-menu';
+import Logout from './pages/logout';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/signup" element={<Signup />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/home" element={<Home />}/>
+          <Route path="/logout" element={<Logout />} />
           <Route path="/user-profile" element={<Profile />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/restaurant" element={<Restaurant />} />

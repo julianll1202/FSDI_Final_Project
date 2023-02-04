@@ -32,7 +32,7 @@ const Signup = ()=>{
         <div className="login">
             <div className="login-card">
                 <h1 className="heading">Sign Up</h1>
-                <form className="mb-3 login-form" onSubmit={handleSubmit}>
+                <form className="mb-3 login-form" onSubmit={saveUser}>
                     <div className="user-name">
                         <div className="first-name">
                             <label className="form-label">Name</label>
