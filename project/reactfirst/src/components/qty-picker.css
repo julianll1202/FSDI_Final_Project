@@ -1,0 +1,14 @@
+.qty-picker {
+    background-color: gray;
+    border-radius: 20px;
+    padding: 2px;
+    color: whitesmoke;
+    width: 30%;
+}
+
+.qty-picker > button {
+    background-color: gray;
+    color: whitesmoke;
+    border-radius: 20px;
+    border: none;
+}

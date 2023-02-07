@@ -5,6 +5,7 @@
     justify-content: space-around;
     height: 5%;
     margin-bottom: 25px;
+    z-index: auto;
     
 }
 

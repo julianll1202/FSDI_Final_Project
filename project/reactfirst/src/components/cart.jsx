@@ -10,7 +10,7 @@ function Cart() {
     }
     return (
         <div id="cart" className="shopping-cart">
-            <button onClick={closeCart}>Close</button>
+            <button onClick={closeCart}><i class="bi bi-x-square"></i></button>
             <h2>Restaurant name</h2>
             <h4>Deliver to ...</h4>
             <ul>
