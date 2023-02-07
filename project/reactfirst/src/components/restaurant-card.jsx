@@ -1,11 +1,11 @@
 import "./restaurant-card.css";
 
-function RestaurantCard() {
+const RestaurantCard = (props) => {
     return (
         <div className="restaurant-card">
-            <img src= "/img/burgers.jpg" alt=""/>
+            <img src= {"/img/"+props.data.image} alt=""/>
             <div className="restaurant-info">
-                <h4>Restaurant name</h4>
+                <h4>{props.data.name}</h4>
                 <h5>Delivery fee | Wait time</h5>
                 <div className="star-rating">
                     <i class="bi bi-star-fill"></i>

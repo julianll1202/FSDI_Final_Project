@@ -3,7 +3,8 @@
     border-radius: 20px;
     padding: 2px;
     color: whitesmoke;
-    width: 30%;
+    width: 80%;
+    text-align: center;
 }
 
 .qty-picker > button {
