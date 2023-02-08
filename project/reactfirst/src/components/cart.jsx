@@ -10,19 +10,19 @@ function Cart() {
     }
     return (
         <div id="cart" className="shopping-cart">
-            <button onClick={closeCart}>Close</button>
+            <button onClick={closeCart}><i class="bi bi-x-square"></i></button>
             <h2>Restaurant name</h2>
             <h4>Deliver to ...</h4>
-            <ul>
+            <ul className="product-list">
                 <li>
-                    <div>
+                    <div className="product">
                         <h5>Food name</h5>
                         <p>Price</p>
                         <div>
                             <QtyPicker />
                         </div>
                     </div>
-                    <img></img>
+                    <img src="/img/burgers.jpg" alt="" />
                 </li>
             </ul>
         </div>

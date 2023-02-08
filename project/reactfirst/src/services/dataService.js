@@ -20,6 +20,11 @@ class Dataservice {
         let res = await axios.post("http://127.0.0.1:5000/user-profile", userData);
         return res.data;
     }
+
+    async loadRestaurants() {
+        let res = await axios.get("http://127.0.0.1:5000/home");
+        return res.data;
+    }
 }   
 
 export default Dataservice;

@@ -2,3 +2,38 @@
     background-color: lightgray;
    z-index: 1;
 }
+.shopping-cart > button {
+    background-color: lightgray;
+    border: none;
+    font-size: 1.7rem;
+}
+
+.shopping-cart h2 {
+    font-size: 1.5rem;
+}
+
+.shopping-cart h4 {
+    font-size: 1.1rem;
+}
+.product-list > li {
+    display: flex;
+    flex-direction: row;
+}
+
+.product {
+    margin-right: 10px;
+}
+
+.product > h5 {
+    font-size: 1rem;
+}
+
+.product p {
+    font-size: 0.8rem;
+}
+li > img {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    
+}
