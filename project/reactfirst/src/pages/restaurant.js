@@ -3,7 +3,8 @@ import "./restaurant.css";
 const Restaurant = () => {
     return (
         <div>
-            <h1>Blake</h1>
+            <h1>Restaurants</h1>
+                <restaurantMenu />
         </div>
     )
 };
