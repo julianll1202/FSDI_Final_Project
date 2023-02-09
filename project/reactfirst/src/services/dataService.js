@@ -25,6 +25,11 @@ class Dataservice {
         let res = await axios.get("http://127.0.0.1:5000/home");
         return res.data;
     }
+
+    async loadCategories() {
+        let res = await axios.get("http://127.0.0.1:5000/category")
+        return res.data;
+    }
 }   
 
 export default Dataservice;

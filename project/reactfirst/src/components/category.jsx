@@ -1,10 +1,12 @@
 import './category.css'
 
-function Category (props) {
+function CategoryCard (props) {
     return (
-        <div>
-            <img src="" alt="" />
-            <h4>Food Category</h4>
+        <div className='category'>
+            <img src={"/img/"+props.data.image} alt="" />
+            <h4>{props.data.name}</h4>
         </div>
     )
-}
+};
+
+export default CategoryCard;
