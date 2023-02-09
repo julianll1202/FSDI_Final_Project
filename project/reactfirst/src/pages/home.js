@@ -1,12 +1,12 @@
-<<<<<<< HEAD
+
 import { useState } from "react";
 import './home.css'
-=======
+
 import RestaurantCard from "../components/restaurant-card";
 import Dataservice from "../services/dataService";
 import { useEffect, useState } from "react";
 import "./home.css"
->>>>>>> refs/remotes/origin/main
+
 
 function Home() {
     const [restaurants, setRestaurants] = useState([]);
@@ -22,9 +22,9 @@ function Home() {
         console.log(restaurants);
     }
     return (
-<<<<<<< HEAD
-        <h1>Fast Foodie</h1>
-=======
+
+        
+
         
         <div>
             <h1>Home</h1>
@@ -35,7 +35,7 @@ function Home() {
                 </div>
             </div>
         </div>
->>>>>>> refs/remotes/origin/main
+
     )
 };
 
