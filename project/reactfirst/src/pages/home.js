@@ -4,6 +4,7 @@ import CategoryCard from "../components/category";
 import Dataservice from "../services/dataService";
 import { useEffect, useState } from "react";
 import "./home.css"
+import { Link } from "react-router-dom";
 
 
 function Home() {
@@ -34,7 +35,7 @@ function Home() {
             <div>
                 <h1>Restaurants</h1>
                 <div className="rest-list">
-                    { restaurants.map(r => <RestaurantCard key={r.id} data={r} />)}   
+                    { restaurants.map(r => <RestaurantCard key={r.id} data={r}></RestaurantCard>)}   
                 </div>
             </div>
             <div>
