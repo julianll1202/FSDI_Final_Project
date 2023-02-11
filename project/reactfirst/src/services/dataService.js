@@ -12,7 +12,7 @@ class Dataservice {
     }
 
     async getUserInfo(token) {
-        let res = await axios.get("http://127.0.0.1:5000/user-profile/"+token);
+        let res = await axios.get("http://127.0.0.1:5000/user-profile", {params: token});
         return res.data;
     }
 
@@ -34,6 +34,11 @@ class Dataservice {
     async getMenu(restId) {
         let res = await axios.get("http://127.0.0.1:5000/menu/"+restId);
         return res.data;
+    }
+
+    async getFavorites(userId) {
+        let list = await axios.get("http://127.0.0.1:5000/user/"+userId+"/favorite");
+        return list.data;
     }
 }   
 

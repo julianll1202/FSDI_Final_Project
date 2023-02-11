@@ -12,9 +12,9 @@ function UserInfo(props) {
     },[])
 
     const loadUser = async () => {
-        console.log("Loading User...");
+        console.log(props.data);
         let service = new Dataservice();
-        let res = await service.getUserInfo(props.data.token);
+        let res = await service.getUserInfo({"token":props.data.token});
         console.log(res);
         setUserInfo(res);
     }
