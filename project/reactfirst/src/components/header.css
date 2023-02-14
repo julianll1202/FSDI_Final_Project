@@ -36,4 +36,19 @@
 #cart-btn {
     background-color: #ff9e00;
     border: 2px solid #ff9e00;
+    height: 20%;
+}
+
+.logged-users-opt {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.home-link {
+    margin-top: 0;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-size: 2rem;
 }

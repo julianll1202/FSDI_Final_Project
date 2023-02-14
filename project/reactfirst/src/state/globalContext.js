@@ -1,15 +1,17 @@
 import UserContext from "./userContext";
 import { useState } from "react";
 const GlobalContext = (props) => {
-    const [token, setToken] = useState({});
+    const [user, setUser] = useState({});
 
-    const addToken = (newToken) => {
-        setToken(newToken);
+    const addUserIn = (newToken) => {
+        let copy = {...newToken};
+        copy['loggedIn'] = true;
+        setUser(copy);
     }
     return (
         <UserContext.Provider value ={{
-            user: token,
-            addToken: addToken
+            user: user,
+            addUser: addUserIn
         }}>
             {props.children}
         </UserContext.Provider>

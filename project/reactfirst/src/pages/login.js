@@ -8,7 +8,7 @@ import UserContext from '../state/userContext';
 
 const Login =()=> {
     const [userCred, setUserCred] = useState({});
-    const addNewToken = useContext(UserContext).addToken;
+    const addNewUser = useContext(UserContext).addUser;
     const handleUserCredChange = (e) => {
         e.preventDefault();
         const text = e.target.value;
@@ -31,7 +31,7 @@ const Login =()=> {
         console.log(copy['email']);
         let p = await service.validateUserCred(copy);
         console.log(p);
-        addNewToken(p);
+        addNewUser(p);
     }
 
     return (

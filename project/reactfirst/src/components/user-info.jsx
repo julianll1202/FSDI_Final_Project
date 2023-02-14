@@ -7,14 +7,16 @@ import "../pages/profile.css"
 function UserInfo(props) {
    const [userInfo, setUserInfo] = useState({});
     const [editOn, setEditOn] = useState();
+    
     useEffect(() => {
         loadUser();
     },[])
 
     const loadUser = async () => {
-        console.log(props.data);
+        
         let service = new Dataservice();
-        let res = await service.getUserInfo({"token":props.data.token});
+        const tokn = {"token":props.data.token}
+        let res = await service.getUserInfo(props.data.token);
         console.log(res);
         setUserInfo(res);
     }

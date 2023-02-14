@@ -31,15 +31,15 @@ function Home() {
     }
     return (
         <div>
-            <h1>Home</h1>
-            <div>
-                <h1>Restaurants</h1>
+            <h1 className="title">Home</h1>
+            <div className="home-section">
+                <h1 className="subtitles">Featured Restaurants</h1>
                 <div className="rest-list">
                     { restaurants.map(r => <RestaurantCard key={r.id} data={r}></RestaurantCard>)}   
                 </div>
             </div>
-            <div>
-                <h1>Categories</h1>
+            <div className="home-section">
+                <h1 className="subtitles">Popular Categories</h1>
                 <div className="rest-list">
                       { categories.map( c => <CategoryCard key={c.id} data={c} />)}
                 </div>

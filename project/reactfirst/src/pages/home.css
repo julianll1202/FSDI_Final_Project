@@ -2,3 +2,22 @@
     display: flex;
     flex-direction: row;
 }
+
+.home-section {
+    margin-left: 15px;
+}
+
+.title {
+    margin-left: 15px;
+    color: black;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+
+.subtitles {
+    margin-top: 0;
+    color: black;
+    font-weight: 700;
+    font-size: 1.5rem;
+}

@@ -12,7 +12,9 @@ class Dataservice {
     }
 
     async getUserInfo(token) {
-        let res = await axios.get("http://127.0.0.1:5000/user-profile", {params: token});
+        console.log(token);
+        let res = await axios.post("http://127.0.0.1:5000/user-profile/"+token, {"token": token});
+
         return res.data;
     }
 

@@ -10,7 +10,7 @@ function SideMenu() {
     }
 
     const collapseMenu = () => {
-        document.getElementById("sidebar").style.width = "10%";
+        document.getElementById("sidebar").style.width = "5%";
         setExtended(false);
     }
 
