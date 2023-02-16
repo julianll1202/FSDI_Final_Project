@@ -19,7 +19,10 @@ const RestaurantMenu = (props) => {
     return(
         <div>
             <h1>Menu</h1>
-                { menu.map( f => <Food key={f.id} data={f} />)}
+                <div className="menu-grid">
+                    { menu.map( f => <Food key={f.id} data={f} />)}
+                </div>
+                
   
         </div>
     )

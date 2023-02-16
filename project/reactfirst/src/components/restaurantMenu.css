@@ -1,0 +1,5 @@
+.menu-grid {
+    display: grid;
+    column-gap: 15px;
+    grid-template-columns: 500px 500px;
+}

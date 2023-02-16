@@ -17,6 +17,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import SideMenu from './components/side-menu';
 import Logout from './pages/logout';
+import FoodDetails from './pages/food-details';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           <Route path="/user-profile" element={<Profile />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/restaurant" element={<Restaurant />} />
+          <Route path="/food-details" element={<FoodDetails />} />
         </Routes>
       </div>
     </div>

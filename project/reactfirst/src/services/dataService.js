@@ -33,6 +33,10 @@ class Dataservice {
         return res.data;
     }
 
+    async getRestaurantDetails(restId) {
+        let info = await axios.get("http://127.0.0.1:5000/restaurant/"+restId);
+        return info.data;
+    }
     async getMenu(restId) {
         let res = await axios.get("http://127.0.0.1:5000/menu/"+restId);
         return res.data;
@@ -41,6 +45,11 @@ class Dataservice {
     async getFavorites(userId) {
         let list = await axios.get("http://127.0.0.1:5000/user/"+userId+"/favorite");
         return list.data;
+    }
+
+    async getFoodDetails(foodId) {
+        let details = await axios.get("http://127.0.0.1:5000/food/details/"+foodId);
+        return details.data;
     }
 }   
 
