@@ -2,7 +2,9 @@ import { createContext } from "react";
 
 let UserContext = createContext({
     user: {},   
-    addUser:() => {}
+    cart: [],
+    addUser:() => {},
+    addToCart: () => {}
 });
 
 export default UserContext;

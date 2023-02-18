@@ -9,7 +9,7 @@ import UserContext from "../state/userContext";
 function Header(){
     
     const toggleCart = () => {
-        document.getElementById("cart").style.width = "250px";
+        document.getElementById("cart").style.width = "350px";
         document.getElementById("cart").style.visibility = "visible";
     }
 

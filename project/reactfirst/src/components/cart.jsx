@@ -1,30 +1,35 @@
-import { render } from "@testing-library/react";
 import "./cart.css";
-import QtyPicker from "./qty-picker";
+import UserContext from "../state/userContext";
+import { useContext, useState } from "react";
+import ProductInCart from "./productInCart";
 
-function Cart() {
-    
+const Cart = () => {
+    const cart = useContext(UserContext).cart;
+    const user = useContext(UserContext).user;
+    const [order, setOrder] = useState({});
+
     const closeCart = () => {
         document.getElementById("cart").style.width = "0";
         document.getElementById("cart").style.visibility="hidden";
     }
+
+    const handleOrder = () => {
+        let orderCopy = {
+            "user": user,
+            "delivery_address": "Not available",
+            "items": cart,
+        }
+        console.log(orderCopy)
+    }
     return (
         <div id="cart" className="shopping-cart">
-            <button onClick={closeCart}><i class="bi bi-x-square"></i></button>
+            <button className="close-btn" onClick={closeCart}><i class="bi bi-x-square"></i></button>
             <h2>Restaurant name</h2>
             <h4>Deliver to ...</h4>
-            <ul className="product-list">
-                <li>
-                    <div className="product">
-                        <h5>Food name</h5>
-                        <p>Price</p>
-                        <div>
-                            <QtyPicker />
-                        </div>
-                    </div>
-                    <img src="/img/burgers.jpg" alt="" />
-                </li>
-            </ul>
+            <div className="product-list">
+                {cart ? cart.map(prod => <ProductInCart key={prod.food_id} data={prod} />) : console.log("Empty cart")}
+            </div>
+            <button className="pill-btn" onClick={handleOrder}>Proceed to Checkout</button>
         </div>
     )
 };

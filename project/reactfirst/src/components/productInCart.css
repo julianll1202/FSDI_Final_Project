@@ -1,0 +1,32 @@
+.product-cart {
+    display: grid;
+    grid-template-columns:150px 100px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+hr {
+    color: gray;
+}
+.product {
+    margin: 0;
+}
+
+.product > div {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.product > div > p {
+    
+    border: 1px solid black;
+    border-radius: 20%;
+    padding: 2px 8px;
+}
+.product-cart > img {
+    width: 120px;
+    height: 90px;
+    border-radius: 10px;
+}
+

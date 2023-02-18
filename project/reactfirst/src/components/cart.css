@@ -1,13 +1,19 @@
 .shopping-cart {
     background-color: lightgray;
-   z-index: 1;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    transition: 0.5s;
+    align-items: center;
 }
-.shopping-cart > button {
+
+.close-btn {
     background-color: lightgray;
     border: none;
     font-size: 1.7rem;
 }
-
 .shopping-cart h2 {
     font-size: 1.5rem;
 }
@@ -31,9 +37,16 @@
 .product p {
     font-size: 0.8rem;
 }
-li > img {
-    width: 90px;
-    height: 90px;
-    border-radius: 10px;
-    
+
+.pill-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+    text-align: center;
+    background-color: #FF1800;
+    color: whitesmoke;
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: none;
 }
