@@ -15,11 +15,19 @@
     font-size: 1.7rem;
 }
 .shopping-cart h2 {
+    margin-left: 12px;
     font-size: 1.5rem;
 }
 
 .shopping-cart h4 {
-    font-size: 1.1rem;
+    margin-left: 15px;
+    font-size: 1rem;
+    color: gray;
+}
+
+.shopping-cart h5 {
+    font-size: 0.9rem;
+    margin-left: 15px;
 }
 .product-list > li {
     display: flex;
@@ -38,10 +46,14 @@
     font-size: 0.8rem;
 }
 
+.shopping-cart > a {
+    text-decoration: none;
+}
 .pill-btn {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    
     width: 65%;
     text-align: center;
     background-color: #FF1800;
@@ -49,4 +61,13 @@
     border-radius: 20px;
     padding: 5px 10px;
     border: none;
+}
+
+#empty {
+    text-align: center;
+    font-size: 7rem;
+}
+
+.empty-cart {
+    text-align: center;
 }

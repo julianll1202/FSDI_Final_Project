@@ -30,3 +30,10 @@ hr {
     border-radius: 10px;
 }
 
+.del-btn {
+    align-items: baseline;
+    background-color: black;
+    color: whitesmoke;
+    border-radius: 50%;
+    border: none;
+}

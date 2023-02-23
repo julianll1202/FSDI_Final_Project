@@ -1,10 +1,11 @@
 import "./productInCart.css";
 import QtyPicker from "./qty-picker";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import UserContext from "../state/userContext";
 
 function ProductInCart(props) {
     const [product, setProduct] = useState({});
-    
+    const removeProd = useContext(UserContext).removeFromCart;
 
     useEffect(() => {
         setProduct(props.data);
@@ -18,6 +19,10 @@ function ProductInCart(props) {
     
     }
 
+    const removeProduct = () => {
+        removeProd(props.data.food_id)
+    }
+
     return (
         <div className="product-cart">
             <div className="product">
@@ -26,6 +31,7 @@ function ProductInCart(props) {
                 <div>
                     <p id="prod-qty">{product.quantity}</p>
                     <QtyPicker onChange={handleQtyChange}/>
+                    <button className="del-btn" onClick={removeProduct}><i class="bi bi-trash-fill"></i></button>
                 </div>
                 
             </div>

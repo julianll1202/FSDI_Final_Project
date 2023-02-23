@@ -20,7 +20,7 @@ function FoodDetails(props) {
         let service = new Dataservice();
         console.log(state);
         let info = await service.getFoodDetails(state.data.id);
-        console.log(info);
+        // console.log(info);
         setFood(info);
     }
 
@@ -35,6 +35,7 @@ function FoodDetails(props) {
             "food_name": food.name,
             "price": food.price,
             "rest_id": food.restaurant_id,
+            "rest_name": food.restaurant_name,
             "quantity": qty,
             "side_notes": document.getElementById("sidenotes").value
         };
