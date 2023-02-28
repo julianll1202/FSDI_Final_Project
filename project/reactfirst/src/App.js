@@ -19,6 +19,7 @@ import SideMenu from './components/side-menu';
 import Logout from './pages/logout';
 import FoodDetails from './pages/food-details';
 import Checkout from './pages/checkout';
+import PastOrders from './pages/pastOrders';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <Route path="/restaurant" element={<Restaurant />} />
           <Route path="/food-details" element={<FoodDetails />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/past-orders" element={<PastOrders />} />
         </Routes>
       </div>
     </div>

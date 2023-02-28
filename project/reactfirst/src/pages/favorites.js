@@ -18,7 +18,7 @@ const Favorites = () => {
     }
     return(
         <div>
-            <h1>User favorites</h1>
+            <h1 className="title">User favorites</h1>
             {favorites.map(fav => <RestaurantCard key={fav.fav_id} data={fav} />)}
         </div>
     )

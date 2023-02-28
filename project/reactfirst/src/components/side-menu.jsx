@@ -31,7 +31,7 @@ function SideMenu() {
                         </div>
                     }  
                 </Link>
-                <Link aria-current="page" to="/">  
+                <Link aria-current="page" to="/past-orders">  
                     {!extended ?
                         <i class="bi bi-receipt"></i> : 
                         <div>

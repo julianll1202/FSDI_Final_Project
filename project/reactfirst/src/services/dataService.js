@@ -23,6 +23,10 @@ class Dataservice {
         return res.data;
     }
 
+    async logOutUser() {
+        let res = await axios.get("http://127.0.0.1:5000/user/logout");
+        return res.data;
+    }
     async loadRestaurants() {
         let res = await axios.get("http://127.0.0.1:5000/home");
         return res.data;
@@ -50,6 +54,21 @@ class Dataservice {
     async getFoodDetails(foodId) {
         let details = await axios.get("http://127.0.0.1:5000/food/details/"+foodId);
         return details.data;
+    }
+
+    async saveOrder(order) {
+        let res = await axios.post("http://127.0.0.1:5000/order", order);
+        return res.data;
+    }
+
+    async loadPastOrders(user_id) {
+        let past_orders = await axios.get("http://127.0.0.1:5000/user/"+user_id+"/orders");
+        return past_orders.data;
+    }
+
+    async deleteOrder(order_id) {
+        let res = await axios.delete("http://127.0.0.1:5000/order/"+order_id);
+        return res.data;
     }
 }   
 

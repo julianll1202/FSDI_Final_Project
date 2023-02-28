@@ -16,6 +16,8 @@ const Cart = () => {
     }
 
     const handleOrder = () => {
+        user.delivery_address ? console.log("Everything is all right"): alert("Please enter your delivery address")
+        user.delivery_time ? console.log("Everything is all right") : alert("Please enter your delivery time")
         let orderCopy = {
             "user_id": user.id,
             "delivery_address": user.delivery_address,
