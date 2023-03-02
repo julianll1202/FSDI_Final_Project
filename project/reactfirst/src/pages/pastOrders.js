@@ -16,10 +16,18 @@ function PastOrders() {
         console.log(res);
         setOrders(res);
     }
+
+    const onDelete = (order) => {
+        console.log("Deleted,",order);
+        let copy =orders.filter(x=>x.id !== order.id);
+        setOrders(copy);
+        console.log(copy);
+
+    }
     return (
         <div>
             <h1 className='title'>Past Orders</h1>
-            {orders ? orders.map(ordr => <PastOrder key={ordr.id} data={ordr} />): console.log("You have no orders")}
+            {orders ? orders.map(ordr => <PastOrder key={ordr.id} onDelete={onDelete} data={ordr} />): console.log("You have no orders")}
         </div>
     )
 };

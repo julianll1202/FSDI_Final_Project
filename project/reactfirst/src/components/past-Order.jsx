@@ -5,8 +5,10 @@ function PastOrder (props) {
     
     const deleteOrder = async() => {
         let service = new Dataservice();
+        console.log("deleting " + props.data.id);
         let res = await service.deleteOrder(props.data.id);
         console.log(res);
+        props.onDelete(props.data);
     }
     return (
         <div className='past-order'>

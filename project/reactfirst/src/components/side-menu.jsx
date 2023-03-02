@@ -22,7 +22,14 @@ function SideMenu() {
             }
             
             <div  className="page-links">
-                
+            <   Link aria-current="page" to="/home">  
+                    {!extended ?
+                        <i class="bi bi-house-door-fill"></i>: 
+                        <div>
+                            <i class="bi bi-question-circle"></i> Home
+                        </div>
+                    }  
+                </Link>
                 <Link aria-current="page" to="/favorites">  
                     {!extended ?
                         <i class="bi bi-heart-fill"></i> : 
