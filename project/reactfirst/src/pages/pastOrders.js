@@ -1,12 +1,13 @@
 import { useContext, useEffect, useState } from 'react';
 import PastOrder from '../components/past-Order';
 import Dataservice from '../services/dataService'
+import useLoginHook from '../services/loginHook';
 import UserContext from '../state/userContext';
 
 function PastOrders() {
     const user = useContext(UserContext).user;
     const [orders, setOrders] = useState([]);
-
+    useLoginHook();
     useEffect(()=> {
         loadOrders();
     },[])

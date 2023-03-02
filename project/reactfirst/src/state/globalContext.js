@@ -1,7 +1,9 @@
 import UserContext from "./userContext";
 import { useState } from "react";
 const GlobalContext = (props) => {
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState({
+        'loggedIn':false
+    });
     const [cart, setCart] = useState([]);
     const [protoOrder, setPOrder] = useState({});
 
@@ -11,12 +13,18 @@ const GlobalContext = (props) => {
         setUser(copy);
     }
 
+    const logUserOut = () => {
+        let copy = {
+            "loggedIn": false
+        };
+        setUser(copy);
+    }
     const addToCart = (newItem) => {
         let copy = [...cart];
 
         let found = false
         for(let i=0; i < copy.length; i++) {
-            if(copy[i].food_id == newItem.food_id) {
+            if(copy[i].food_id === newItem.food_id) {
                 copy[i].quantity += newItem.quantity;
                 found = true;
             }
@@ -33,7 +41,7 @@ const GlobalContext = (props) => {
     const removeFromCart = (foodId) => {
         let copy = [...cart];
         for(let i=0; i < copy.length; i++) {
-            if (copy[i].food_id == foodId) {
+            if (copy[i].food_id === foodId) {
                 copy.splice(i,1);
             }
         }
@@ -50,6 +58,7 @@ const GlobalContext = (props) => {
             cart: cart,
             protoOrder: protoOrder,
             addUser: addUserIn,
+            logUserOut: logUserOut,
             addToCart: addToCart,
             removeFromCart: removeFromCart,
             addPOrder: addProtoOrder

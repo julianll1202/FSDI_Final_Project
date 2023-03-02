@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import Dataservice from '../services/dataService';
-
+import UserContext from '../state/userContext';
 const Logout = () => {
+    const removeUser = useContext(UserContext).logUserOut;
     useEffect(() => {
         logOut();
     }, []);
@@ -11,6 +12,7 @@ const Logout = () => {
         let service = new Dataservice();
         let res = await service.logOutUser();
         console.log(res)
+        removeUser();
     }
     return (
         <div>

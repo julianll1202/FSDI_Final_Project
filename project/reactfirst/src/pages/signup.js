@@ -326,7 +326,7 @@ const Signup = ()=>{
                     <label className="col-sm-2 col-form-label">Phone</label>
                     <input name="phone" type="text" className="form-control" placeholder="(000)-000-0000" onChange={handleUserChange}/>                
                     
-                    <Link aria-current="page" to="/signup" className='redirect-link'>Already have an account? Click here to log in</Link> 
+                    <Link aria-current="page" to="/login" className='redirect-link'>Already have an account? Click here to log in</Link> 
                     <button className='btn btn-success' type='submit'>REGISTER</button> 
                     
                 </form>  

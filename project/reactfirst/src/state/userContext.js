@@ -5,6 +5,7 @@ let UserContext = createContext({
     cart: [],
     protoOrder: {},
     addUser:() => {},
+    logUserOut:() => {},
     addToCart: () => {},
     removeFromCart: () => {},
     addPOrder: () => {}

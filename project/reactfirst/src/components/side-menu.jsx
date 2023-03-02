@@ -26,7 +26,7 @@ function SideMenu() {
                     {!extended ?
                         <i class="bi bi-house-door-fill"></i>: 
                         <div>
-                            <i class="bi bi-question-circle"></i> Home
+                            <i class="bi bi-house-door-fill"></i> Home
                         </div>
                     }  
                 </Link>

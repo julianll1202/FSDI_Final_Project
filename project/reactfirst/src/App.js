@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import Header from './components/header';
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { useState } from 'react';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {BrowserRouter, Routes, Route, useNavigate} from 'react-router-dom';
 import Signup from './pages/signup';
 import Login from './pages/login';
 import Home from './pages/home';
@@ -20,10 +20,11 @@ import Logout from './pages/logout';
 import FoodDetails from './pages/food-details';
 import Checkout from './pages/checkout';
 import PastOrders from './pages/pastOrders';
+import UserContext from './state/userContext';
 
 
 function App() {
-  
+  const user = useContext(UserContext).user;
 
   
   return (
@@ -32,6 +33,7 @@ function App() {
       <SideMenu />
       <div className='top-menu'>
         <Header />
+          
         <Routes>
           <Route path="/signup" element={<Signup />}/>
           <Route path="/login" element={<Login />}/>
@@ -44,6 +46,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/past-orders" element={<PastOrders />} />
         </Routes>
+       
       </div>
     </div>
     </GlobalContext>

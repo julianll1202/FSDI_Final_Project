@@ -4,8 +4,8 @@
 }
 
 .inline-btn {
-    border: 2px solid #ff4800;
-    color: #ff4800;
+    border: 2px solid #FF7900;
+    color: #FF7900;
     background-color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -15,7 +15,7 @@
 }
 
 .inline-btn:hover {
-    background-color: #ff4800;
+    background-color: #FF7900;
     color: whitesmoke; 
       
 }
