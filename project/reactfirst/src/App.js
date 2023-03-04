@@ -21,6 +21,7 @@ import FoodDetails from './pages/food-details';
 import Checkout from './pages/checkout';
 import PastOrders from './pages/pastOrders';
 import UserContext from './state/userContext';
+import PromoView from './pages/promoView';
 
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
       <SideMenu />
       <div className='top-menu'>
         <Header />
-          
+        
         <Routes>
           <Route path="/signup" element={<Signup />}/>
           <Route path="/login" element={<Login />}/>

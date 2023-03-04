@@ -2,10 +2,11 @@ import "./signup.css";
 import "./login.css"
 import {useEffect, useState} from 'react';
 import Dataservice from "../services/dataService";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Signup = ()=>{
     const [user, setUser] = useState({});
-
+    const navigate = useNavigate();
+    
     const handleUserChange = (e) => {
         e.preventDefault();
         const text = e.target.value;
@@ -16,10 +17,8 @@ const Signup = ()=>{
         setUser(copy);      
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        saveUser();
-    }
+    
+    
     const saveUser = async e => {
         e.preventDefault();
         let service = new Dataservice();
@@ -27,6 +26,7 @@ const Signup = ()=>{
         console.log(copy);
         let p = await service.saveUser(copy);
         console.log(p);
+        navigate("/login");
     }
     return (
         <div className="login">
@@ -36,26 +36,26 @@ const Signup = ()=>{
                     <div className="user-name">
                         <div className="first-name">
                             <label className="form-label">Name</label>
-                            <input name="first-name"type="text" className="form-control" onChange={handleUserChange} />
+                            <input name="first-name"type="text" className="form-control" onChange={handleUserChange} placeholder="John" required pattern="[A-Za-z]*"/>
                         </div>    
                         <div className="first-name">
                             <label className="form-label">Last Name</label>
-                            <input name="last-name" type="text" className="form-control" onChange={handleUserChange}/>
+                            <input name="last-name" type="text" className="form-control" onChange={handleUserChange} placeholder="Doe" required pattern="[A-Za-z]*"/>
                         </div>               
                     </div>
                     
 
                     
                     <label className="form-label">Email</label>
-                    <input name="email" type="text" className="form-control" placeholder="john@example.com" onChange={handleUserChange}/>                 
+                    <input name="email" type="email" className="form-control" placeholder="john@example.com" onChange={handleUserChange} required/>                 
                     
 
                    
                     <label className="form-label">Password</label>
-                    <input type="password" name="password" className="form-control" placeholder="password" onChange={handleUserChange}/>                  
+                    <input type="password" name="password" className="form-control" placeholder="Password" onChange={handleUserChange} required/>                  
                     
                         <label className="col-sm-2 col-form-label">Country</label>
-                        <select name="country" className="form-select" id="country">
+                        <select name="country" required className="form-select" id="country">
                             <option value="0" label="Select a country ... " selected="selected">Select a country ... </option>
                             <optgroup id="country-optgroup-Africa" label="Africa">
                                 <option value="DZ" label="Algeria">Algeria</option>
@@ -324,7 +324,7 @@ const Signup = ()=>{
 
                          
                     <label className="col-sm-2 col-form-label">Phone</label>
-                    <input name="phone" type="text" className="form-control" placeholder="(000)-000-0000" onChange={handleUserChange}/>                
+                    <input name="phone" type="text" className="form-control" placeholder="(000)-000-0000" maxLength="10" onChange={handleUserChange} required/>                
                     
                     <Link aria-current="page" to="/login" className='redirect-link'>Already have an account? Click here to log in</Link> 
                     <button className='btn btn-success' type='submit'>REGISTER</button> 

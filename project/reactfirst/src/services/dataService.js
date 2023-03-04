@@ -46,6 +46,16 @@ class Dataservice {
         return res.data;
     }
 
+    async addFavorite(userId, restId) {
+        let res = await axios.post("http://127.0.0.1:5000/user/"+userId+"/favorite/"+restId);
+        return res.data;
+    }
+
+    async removeFavorite(userId,restId) {
+        let res = await axios.delete("http://127.0.0.1:5000/user/"+userId+"/favorite/"+restId);
+        return res.data;
+    }
+
     async getFavorites(userId) {
         let list = await axios.get("http://127.0.0.1:5000/user/"+userId+"/favorite");
         return list.data;

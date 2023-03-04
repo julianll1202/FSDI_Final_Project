@@ -36,7 +36,7 @@
 #cart-btn {
     background-color: #ff9e00;
     border: 2px solid #ff9e00;
-    height: 20%;
+    height: 100%;
 }
 
 .logged-users-opt {
@@ -51,4 +51,9 @@
     color: black;
     font-weight: 700;
     font-size: 2rem;
+}
+
+.logged {
+    display: grid;
+    grid-template-columns: 600px 400px;
 }

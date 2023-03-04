@@ -9,6 +9,7 @@ import UserContext from '../state/userContext';
 const Login =()=> {
     const [userCred, setUserCred] = useState({});
     const addNewUser = useContext(UserContext).addUser;
+    const navigate = useNavigate();
     const handleUserCredChange = (e) => {
         e.preventDefault();
         const text = e.target.value;
@@ -21,7 +22,6 @@ const Login =()=> {
     }
 
     const handleSubmit = (e) => {
-        
         e.preventDefault();
         saveUserCred();
     }
@@ -32,6 +32,7 @@ const Login =()=> {
         let p = await service.validateUserCred(copy);
         console.log(p);
         addNewUser(p);
+        navigate("/home");
     }
 
     return (

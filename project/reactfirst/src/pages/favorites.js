@@ -19,10 +19,23 @@ const Favorites = () => {
         setFavorites(list);
         console.log(list);
     }
+
+    const onDelete = (rest) => {
+        let copy =favorites.filter(x=>x.rest_id !== rest.rest_id);
+        setFavorites(copy);
+    }
     return(
-        <div>
+        <div >
             <h1 className="title">User favorites</h1>
-            {favorites.map(fav => <RestaurantCard key={fav.fav_id} data={fav} />)}
+            <div className="favorites">
+                {favorites[0] != null ?
+                    favorites.map(fav => <RestaurantCard  key={fav.rest_id} data={fav} onDelete={onDelete} />) :
+                    <div>
+                        <img  src="/img/fav.png" alt=""></img>
+                        <h4>Here you will see all of your favorite restaurants</h4>
+                    </div>
+                }
+            </div>
         </div>
     )
 }

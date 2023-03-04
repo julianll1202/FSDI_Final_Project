@@ -1,17 +1,62 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState, useContext } from "react";
+import { Link} from "react-router-dom";
 import "./restaurant-card.css";
+import Dataservice from "../services/dataService";
+import UserContext from "../state/userContext";
+import Favorites from "../pages/favorites";
 
 const RestaurantCard = (props) => {
-    const [fav, setFav] = useState(false);
+    const [favorites, setFavorites] = useState([]);
+    const user = useContext(UserContext).user;
+    const [fav, setFav] = useState();
+    useEffect(() => {
+        loadFavorites();
 
-    const addFavorite = () => {
+    },[]);
+
+    useEffect(() => {
+        isFavorite();
+    })
+
+    const isFavorite = () => {
+        for(let i = 0; i < favorites.length; i++) {
+            if(props.data.id === favorites[i].rest_id || props.data.rest_id === favorites[i].rest_id) {
+                console.log("its a fav");
+                setFav(true)
+
+            }
+        }
+
+    }
+    
+    const addFavorite = async () => {
         setFav(true);
+        let service = new Dataservice();
+        console.log(props.data);
+        let res = await service.addFavorite(user.id, props.data.rest_id ? props.data.rest_id: props.data.id);
+        console.log(res);
+        
+    }
+    const removeFavorite = async () => {
+        setFav(false);
+        let service = new Dataservice();
+        console.log(props.data);
+        let res = await service.removeFavorite(user.id,props.data.rest_id ? props.data.rest_id: props.data.id );
+        console.log(res);
+        let copy =favorites.filter(x=>x.rest_id !== props.data.rest_id ? props.data.rest_id: props.data.id);
+        setFavorites(copy);
+        props.onDelete(props.data);
     }
 
-    const removeFavorite = () => {
-        setFav(false);
+    const loadFavorites = async () => {
+        let service = new Dataservice();
+        let list = await service.getFavorites(user.id)
+        setFavorites(list);
+        console.log(list);
+ 
     }
+
+     
     return (
         <div className="restaurant-card">
             <img src= {"/img/"+props.data.image} alt=""/>

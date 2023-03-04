@@ -1,10 +1,9 @@
 import RestaurantCard from "../components/restaurant-card";
 import CategoryCard from "../components/category";
 import Dataservice from "../services/dataService";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./home.css"
-import UserContext from "../state/userContext";
-import { useNavigate } from "react-router-dom";
+
 import useLoginHook from "../services/loginHook";
 
 function Home() {
@@ -32,7 +31,7 @@ function Home() {
         let service = new Dataservice();
         let data = await service.loadRestaurants(); 
         setRestaurants(data);
-        console.log(restaurants);
+        console.log(data);
     }
 
     const loadCategories = async () => {
