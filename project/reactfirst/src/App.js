@@ -22,6 +22,7 @@ import Checkout from './pages/checkout';
 import PastOrders from './pages/pastOrders';
 import UserContext from './state/userContext';
 import PromoView from './pages/promoView';
+import Payment from './pages/payment';
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
           <Route path="/food-details" element={<FoodDetails />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/past-orders" element={<PastOrders />} />
+          <Route path="/payment" element={<Payment />} />
         </Routes>
        
       </div>

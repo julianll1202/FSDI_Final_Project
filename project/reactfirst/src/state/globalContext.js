@@ -7,7 +7,6 @@ const GlobalContext = (props) => {
     });
     const [cart, setCart] = useState([]);
     const [protoOrder, setPOrder] = useState({});
-    const [restsInCart, setRestsInCart] = useState([]);
 
     const addUserIn = (newToken) => {
         let copy = {...newToken};
@@ -60,22 +59,22 @@ const GlobalContext = (props) => {
         setCart(copy);
     }
 
-    const getRestaurantsInCart = async() => {
-        let service = new Dataservice();
-        let res = await service.loadRestaurants();
-        let rests = [];
-
-        for(let i = 0; i < res.length; i++) {
-            for(let j = 0; j < cart.length; j++) {
-                if(cart[j][0].rest_id == res[i].id) {
-                    rests.push(res[i]);
-                    break;
-                }
-            }
-        }
-        setRestsInCart(rests);
-        console.log(restsInCart);
-    }
+    // const getRestaurantsInCart = async() => {
+    //     let service = new Dataservice();
+    //     let res = await service.loadRestaurants();
+    //     let rests = [];
+    //     let copy = [...cart]
+    //     for(let i = 0; i < res.length; i++) {
+    //         for(let j = 0; j < copy.length; j++) {
+    //             if(copy[j][0].rest_id == res[i].id) {
+    //                 rests.push(res[i]);
+    //                 break;
+    //             }
+    //         }
+    //     }
+    //     console.log(rests);
+    //     return rests;
+    // }
     const addProtoOrder = (newOrder) => {
         setPOrder(newOrder);
         console.log(protoOrder);
@@ -85,12 +84,10 @@ const GlobalContext = (props) => {
             user: user,
             cart: cart,
             protoOrder: protoOrder,
-            restsInCart: restsInCart,
             addUser: addUserIn,
             logUserOut: logUserOut,
             addToCart: addToCart,
             removeFromCart: removeFromCart,
-            getRestsInCart: getRestaurantsInCart,
             addPOrder: addProtoOrder
         }}>
             {props.children}

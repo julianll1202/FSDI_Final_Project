@@ -41,6 +41,7 @@ class Dataservice {
         let info = await axios.get("http://127.0.0.1:5000/restaurant/"+restId);
         return info.data;
     }
+
     async getMenu(restId) {
         let res = await axios.get("http://127.0.0.1:5000/menu/"+restId);
         return res.data;

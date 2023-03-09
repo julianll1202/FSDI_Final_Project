@@ -7,6 +7,8 @@
     height: 100%;
     transition: 0.5s;
     align-items: center;
+    width: 0;
+    visibility: hidden;
 }
 
 .close-btn {
