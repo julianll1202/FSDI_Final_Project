@@ -14,8 +14,18 @@
 .close-btn {
     background-color: lightgray;
     border: none;
-    font-size: 1.7rem;
+    font-size: 1.7rem;  
 }
+
+.dropdown {
+    margin-left: 15px;
+}
+
+.dropbtn{
+    border: none;
+    background-color: white;
+}
+
 .shopping-cart h2 {
     margin-left: 12px;
     font-size: 1.5rem;

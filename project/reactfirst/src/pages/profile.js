@@ -14,7 +14,7 @@ const Profile = () => {
     
     const viewUserInfo = () => {
         document.getElementById("acc-info").style.backgroundColor = "lightgray";
-        document.getElementById("acc-info").style.borderLeft = "4px solid #ff4800";
+        document.getElementById("acc-info").style.borderLeft = "4px solid #FF7900";
         document.getElementById("pay-meth").style.backgroundColor = "white";
         document.getElementById("pay-meth").style.borderLeft = "none";
         document.getElementById("acc-sec").style.backgroundColor = "white";
@@ -27,7 +27,7 @@ const Profile = () => {
 
     const viewPayMethods = () => {
         document.getElementById("pay-meth").style.backgroundColor = "lightgray";
-        document.getElementById("pay-meth").style.borderLeft = "4px solid #ff4800";
+        document.getElementById("pay-meth").style.borderLeft = "4px solid #FF7900";
         document.getElementById("acc-info").style.backgroundColor = "white";
         document.getElementById("acc-info").style.borderLeft = "none";
         document.getElementById("acc-sec").style.backgroundColor = "white";
@@ -39,7 +39,7 @@ const Profile = () => {
 
     const viewAccSecurity = () => {
         document.getElementById("acc-sec").style.backgroundColor = "lightgray";
-        document.getElementById("acc-sec").style.borderLeft = "4px solid #ff4800";
+        document.getElementById("acc-sec").style.borderLeft = "4px solid #FF7900";
         document.getElementById("pay-meth").style.backgroundColor = "white";
         document.getElementById("pay-meth").style.borderLeft = "none";
         document.getElementById("acc-info").style.backgroundColor = "white";

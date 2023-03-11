@@ -337,7 +337,7 @@ function UserInfo(props) {
                                 </optgroup>
                 </select> 
                 <button className='btn btn-success' onClick={editUser}>Edit <i class="bi bi-pencil-square"></i></button> 
-                {editOn ? <button className="inline-btn" type="submit">Save changes</button> : <small>hola</small>}
+                {editOn ? <button className="inline-btn" type="submit">Save changes</button> : console.log("Not editing user info...")}
             </form>
             
         </div>

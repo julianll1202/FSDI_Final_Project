@@ -17,7 +17,7 @@ function Header(){
 
     return (
         <div className="header">
-            <Link aria-current="page" to="/home" className="home-link">FastFoodie</Link>
+            <Link aria-current="page" to="/home" className="home-link"><span id="fastf">FastFoodie</span> <span id="ffab">FF</span></Link>
             
             
             
@@ -25,7 +25,7 @@ function Header(){
                 <div className="logged">
                     <AddressSelector />
                     <div className="logged-users-opt">
-                        <button id="cart-btn" onClick={toggleCart} className="round-fill-btn" ><i class="bi bi-cart2"></i> Cart</button> 
+                        <button id="cart-btn" onClick={toggleCart} className="round-fill-btn" ><i class="bi bi-cart2"></i><span>Cart</span> </button> 
                         <div className="dropdown">
                             <button className="round-fill-btn dropdown-toggle" data-bs-toggle="dropdown">Hi, {u.user.name}</button>
                             <ul className="dropdown-menu">

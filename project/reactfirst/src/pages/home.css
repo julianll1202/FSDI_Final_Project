@@ -1,6 +1,6 @@
 .rest-list{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px 300px;
 }
 
 .home-section {
@@ -20,4 +20,16 @@
     color: black;
     font-weight: 700;
     font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1300px) {
+    .rest-list {
+        grid-template-columns: 300px 300px 300px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .rest-list {
+        grid-template-columns: 300px 300px ;
+    }
 }

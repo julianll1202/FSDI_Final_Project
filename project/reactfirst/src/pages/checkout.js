@@ -19,14 +19,14 @@ function Checkout() {
 
     return (
         <div>
-            <h1>Checkout</h1>
+            <h1 className="title">Checkout</h1>
             <div className="checkout">
-                <div>
+                <div className="prod-list">
                     <h3>Products</h3>
                     {order.items.map( prod => <ProductInCart key={prod.id} data={prod} />)}
                 </div>
                 <div className="order-details">
-                    <h3>Order details</h3>
+                    <h3 className="title">Order details</h3>
                     <p>Delivery address: {order.delivery_address}</p>
                     <p>Delivery time: {order.delivery_time}</p>
                     <p>Total: {order.order_total}</p>

@@ -10,13 +10,11 @@ const Cart = () => {
     const user = useContext(UserContext).user;
     const addPOrder = useContext(UserContext).addPOrder;
     const [cartShown, setCartShown] = useState(0);
-    // const getRestsInCart = useContext(UserContext).getRestsInCart;
     const navigate = useNavigate();
     
     
     const closeCart = () => {
-        // getRestaurantsInCart();
-        // console.log(restInC);
+        
         document.getElementById("cart").style.width = "0";
         document.getElementById("cart").style.visibility="hidden";
     }
@@ -82,7 +80,7 @@ const Cart = () => {
                         Restaurant ...
                     </button>
                     <ul class="dropdown-menu">
-                        {restInC.map((r, index) => <li id={r.id}><button onClick={() => setCartShown(index)}>{r.name}</button> </li>)}
+                        {restInC.map((r, index) => <li id={r.id}><button className="dropbtn" onClick={() => setCartShown(index)}>{r.name}</button> </li>)}
                     </ul>
                 </div>
                 <h4>Deliver to {user.delivery_address} </h4>

@@ -53,7 +53,38 @@
     font-size: 2rem;
 }
 
+#ffab {
+    visibility: hidden;
+}
 .logged {
     display: grid;
     grid-template-columns: 600px 400px;
+}
+
+@media screen and (max-width: 1300px) {
+    .logged {
+        grid-template-columns: 400px 200px;
+    }
+
+    .logged-users-opt {
+        height: 40px;
+    }
+    
+    #cart-btn {
+        width: 100px;
+    }
+    #cart-btn span {
+        visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #ffab{
+        visibility:visible;
+    }
+
+    #fastf {
+        visibility: hidden;
+    }
+    
 }

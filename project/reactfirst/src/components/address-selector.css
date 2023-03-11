@@ -24,3 +24,14 @@
     width: 45%;
     border-radius: 20px;
 }
+
+@media screen and (max-width: 1300px) {
+    .address-select {
+        width: 50%;
+        height: 30px;
+    }
+    
+    .address-select > input {
+        width: 20%;
+    }
+}

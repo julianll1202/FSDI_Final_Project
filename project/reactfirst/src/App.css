@@ -51,3 +51,31 @@
 .top-menu {
   width: 100%;
 }
+
+.promo-view {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.promo-view > a {
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.promo-photos {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 20px;
+}
+
+.promo-photos > img {
+  width: 20%;
+  height:40%;
+  border-radius: 15px;
+  margin-top: 15px;
+}

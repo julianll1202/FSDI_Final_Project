@@ -27,7 +27,13 @@ import Payment from './pages/payment';
 
 function App() {
   const user = useContext(UserContext).user;
-
+  const navigate = useNavigate();
+    useEffect(() => {
+        if (!user.loggedIn) {
+            console.log("NOt logged in");
+            navigate("/promo-view");
+        }
+    },[])
   
   return (
     <GlobalContext>
@@ -48,6 +54,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/past-orders" element={<PastOrders />} />
           <Route path="/payment" element={<Payment />} />
+          <Route path="/promo-view" element={<PromoView />} />
         </Routes>
        
       </div>
