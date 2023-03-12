@@ -13,13 +13,13 @@ class Dataservice {
 
     async getUserInfo(token) {
         console.log(token);
-        let res = await axios.post("http://127.0.0.1:5000/user-profile/"+token, {"token": token});
+        let res = await axios.post("http://127.0.0.1:5000/user-profile", {"token": token});
 
         return res.data;
     }
 
     async editUserInfo(userData) {
-        let res = await axios.post("http://127.0.0.1:5000/user-profile", userData);
+        let res = await axios.put("http://127.0.0.1:5000/user-profile/edit", userData);
         return res.data;
     }
 

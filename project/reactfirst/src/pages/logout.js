@@ -15,8 +15,8 @@ const Logout = () => {
         removeUser();
     }
     return (
-        <div>
-            <h1>Log out</h1>
+        <div className='promo-view'>
+            <h1 className='title'>Log out</h1>
             <p>You have logged out from your account, <Link aria-current="page" to="/login">Click here to log in.</Link></p>
         </div>
     )

@@ -39,10 +39,12 @@ function UserInfo(props) {
             inputs[i].disabled = false;
             console.log(i);
         }
+        document.getElementById("psswd").disabled = false;
+        document.getElementById("phone").disabled = false;
         setEditOn(true);
     }
 
-    const editUserInfo = async e => {
+    const editUserInfo = async (e) => {
         e.preventDefault();
         let service = new Dataservice();
         console.log(userInfo);
@@ -67,9 +69,9 @@ function UserInfo(props) {
                 <label className="form-label">Email address</label>
                 <input name="email" type="text" className="form-control" onChange={handleUserChange} placeholder={userInfo['email']} disabled/>
                 <label className="form-label">Password</label>
-                <input name="password" type="text" className="form-control short-input" onChange={handleUserChange} placeholder={userInfo['password']} disabled/>
+                <input id="psswd" name="password" type="text" className="form-control short-input" onChange={handleUserChange} placeholder={userInfo['password']} disabled/>
                 <label className="form-label">Phone number</label>
-                <input name="phone" type="text" className="form-control short-input" onChange={handleUserChange} placeholder={userInfo['phone']} disabled/>
+                <input id="phone" name="phone" type="text" className="form-control short-input" onChange={handleUserChange} placeholder={userInfo['phone']} disabled/>
                 <label className="form-label">Country</label>
                 <select name="country" className="form-select short-input" id="country"  onChange={handleUserChange} placeholder={userInfo['country']} disabled>
                                 <option value="0" label="Select a country ... " selected="selected">Select a country ... </option>
